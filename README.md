@@ -18,7 +18,7 @@
 
 <h2>Контент</h2>
 
-+ [Кератив таб](#creative-tab)
++ [Креатив таб](#creative-tab)
   + [Создание](#creaite-creative-tab)
   + [Методы](#methods-creative-tab)
 + [Предмет](#item)
@@ -60,7 +60,7 @@
 
 
 
-<br><h1 id="creative-tab">Кератив таб</h1>
+<br><h1 id="creative-tab">Креатив таб</h1>
 
 ```zs
 IZenCreativeTab createCreativeTab(String unlocalizedName, @Optional IItemStack iconIItemStack);
