@@ -561,13 +561,19 @@ var commandManager = Factory.createCommandManager();
 Factory.createItem("test_item")
     .setCreativeTab("misc")
     .setItemRightClick(function(mcItemStack, mcWorld, mcPlayer){
-        commandManager.executeOnServer("me callByServer", mcWorld);
+        commandManager.executeOnServer("me executeOnServer", mcWorld);
         commandManager.executeOnPlayer("me executeOnPlayer", mcPlayer, mcWorld);
         return mcItemStack;
     })
     .register();
 ```
 
+<h1 id="dop-commandmanager-methods">Методы</h1>
+
+| Тип данных | Метод                                                             |
+|------------|-------------------------------------------------------------------|
+| void       | executeOnServer(String command, IMCWorld mcWorld)                 |
+| void       | executeOnPlayer(String command, IPlayer player, IMCWorld mcWorld) |
 
 
 <br><h1 id="dop-mapcolors">Список mapColor</h1>
