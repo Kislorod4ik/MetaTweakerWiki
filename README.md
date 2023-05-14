@@ -46,6 +46,7 @@
 + [Предметные](#functions-item)
   + [ItemRightClick](#function-item-rightclick)
   + [ItemUse](#function-item-use)
+  + 
 <h2>MC-API</h2>
 
 + [MCItemStack](#api-itemstack)
@@ -53,6 +54,7 @@
 + [MCPlayer](#api-player)
 
 <h2>Дополнительно</h2>
+
 + [Менеджер Команд](#dop-commandmanager)
   + [Примеры](dop-commandmanager-example)
   + [Методы](dop-commandmanager-methods)
