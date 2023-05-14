@@ -46,7 +46,6 @@
 + [Предметные](#functions-item)
   + [ItemRightClick](#function-item-rightclick)
   + [ItemUse](#function-item-use)
-
 <h2>MC-API</h2>
 
 + [MCItemStack](#api-itemstack)
@@ -54,10 +53,11 @@
 + [MCPlayer](#api-player)
 
 <h2>Дополнительно</h2>
-
++ [Менеджер Команд](#dop-commandmanager)
+  + [Примеры](dop-commandmanager-example)
+  + [Методы](dop-commandmanager-methods)
 + [Список mapColor](#dop-mapcolors)
 + [Список creativeTab](#dop-creativetabs)
-
 
 
 <br><h1 id="creative-tab">Креатив таб</h1>
@@ -285,24 +285,24 @@ config/metatweaker/sounds.json
 // Пример #1
 import mods.metatweaker.Factory;
 var sound1 = Factory.createSound();
-sound.setBreakSound("break.metatweaker");
-sound.setPlaceSound("place.metatweaker");
-sound.setStepSound("random.step.metatweaker");
-block1.setCound(sound1);
+sound1.setBreakSound("break.metatweaker");
+sound1.setPlaceSound("place.metatweaker");
+sound1.setStepSound("random.step.metatweaker");
+block1.setSound(sound1);
 
 // Пример #2
 import mods.metatweaker.Factory;
 var sound2 = Factory.createSound(1, 1, "break.metatweaker", "place.metatweaker", "random.step.metatweaker");
-block2.setCound(sound2);
+block2.setSound(sound2);
 
 // Пример #3
 import mods.metatweaker.Factory;
-block2.setCound(Factory.createSound(1, 1, "break.metatweaker", "place.metatweaker", "random.step.metatweaker"));
+block2.setSound(Factory.createSound(1, 1, "break.metatweaker", "place.metatweaker", "random.step.metatweaker"));
 
 // Пример #4
 import mods.metatweaker.Factory;
 var sound4 = Factory.createSound(0.8, 0.9).setStepSound("random.step.metatweaker");
-block4.setCound(sound4);
+block4.setSound(sound4);
 ```
 
 
@@ -374,6 +374,7 @@ var test_block2 = Factory.createBlock("test_block2", <minecraft:stone>)
 ```
 
 <h2 id="create-block-drop">Создание с дропом</h2>
+
 [Создание дропа](#create-drop-block)
 
 ```zs
@@ -542,6 +543,30 @@ Factory.createItem("test_item1")
 | boolean    | isCreative()                       |
 | boolean    | isAdventure()                      |
 | void       | give(IItemStack itemStack)         |
+
+
+<br><h1 id="dop-commandmanager">Менеджер Команд</h1>
+
+```zs
+CommandManager createCommandManager();
+```
+
+<h2 id="dop-commandmanager-example">Примеры</h2>
+
+```zs
+import mods.metatweaker.Factory;
+var commandManager = Factory.createCommandManager();  
+Factory.createItem("test_item")
+    .setCreativeTab("misc")
+    .setItemRightClick(function(mcItemStack, mcWorld, mcPlayer){
+        commandManager.executeOnServer("me callByServer", mcWorld);
+        commandManager.executeOnPlayer("me executeOnPlayer", mcPlayer, mcWorld);
+        return mcItemStack;
+    })
+    .register();
+```
+
+
 
 <br><h1 id="dop-mapcolors">Список mapColor</h1>
 
