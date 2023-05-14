@@ -25,12 +25,12 @@
   + [Создание](#create-item-common)
   + [Создание инструмента](#create-item-tool)
   + [Методы](#methods-item)
++ [Дроп-блок](#drop-block)
+  + [Создание](#create-drop-block)
+  + [Методы](#methods-drop-block)
 + [Материал-блок](#material-block)
   + [Создание](#create-material-block)
   + [Методы](#methods-material-block)
-+ [Дроп-блок](#material-drop-block)
-  + [Создание](#create-drop-block)
-  + [Методы](#methods-drop-block)
 + [Звук](#sound)
   + [Создание](#create-sound)
   + [Методы](#methods-sound)
@@ -108,7 +108,7 @@ test_item2.setCreativeTab("misc");
 test_item2.register(); 
 ```
 
-<h2 id="create-item-common">Создание инструмента</h2>
+<h2 id="create-item-tool">Создание инструмента</h2>
 
 ```zs
 import mods.metatweaker.Factory;
@@ -158,13 +158,13 @@ var pickaxe_5_1500 = Factory.createItem("test_tool")
 | IZenItem        | setItemUse(IItemUse onItemUse)                      |
 | IZenItem        | register()                                          |
 
-<br><h1 id="block-drop">Дроп-блок</h1>
+<br><h1 id="drop-block">Дроп-блок</h1>
 
 ```zs
 IZenDropBlock createDropBlock(IItemStack dropIItemStack)
 ```
 
-<h2 id="create-block-material">Создание</h2>
+<h2 id="create-drop-block">Создание</h2>
 
 ```zs
 // Пример #1
@@ -198,13 +198,13 @@ block2.addDrop(
 | int             | getAmount                                           |
 
 
-<br><h1 id="block-material">Материал-блок</h1>
+<br><h1 id="material-block">Материал-блок</h1>
 
 ```zs
 IZenMaterial createMaterial(String idMapColor, @Optional IBlock block)
 ```
 
-<h2 id="create-block-material">Создание</h2>
+<h2 id="create-material-block">Создание</h2>
 
 ```zs
 // Пример #1
@@ -220,7 +220,7 @@ var custom_material_burn_replaceable = Factory.createMaterial("lime")
 ```
 
 
-<h2 id="methods-block-material">Методы</h1>
+<h2 id="methods-material-block">Методы</h1>
 
 | Тип данных   | Метод                                                 |
 |--------------|-------------------------------------------------------|
@@ -347,6 +347,7 @@ var test_block2 = Factory.createBlock("test_block2", Factory.createMaterial("lim
 ```
 
 <h2 id="create-block-sound">Создание с звуком</h2>
+
 [Создание звуков](#create-sounds)
 
 ```zs
@@ -372,7 +373,7 @@ var test_block2 = Factory.createBlock("test_block2", <minecraft:stone>)
   .register();
 ```
 
-<h2 id="create-block-sound">Создание с дропом</h2>
+<h2 id="create-block-drop">Создание с дропом</h2>
 [Создание дропа](#create-drop-block)
 
 ```zs
